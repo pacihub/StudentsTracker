@@ -1,10 +1,10 @@
 class Student:
-
+    #class attribute
     all_students = []
 
     def __init__(self, name, grade):
         self.name = name
-        self._grade = grade
+        self._grade = grade         # private attribute
         Student.all_students.append(self)
 
     @property
@@ -20,13 +20,13 @@ class Student:
     @staticmethod
     def calculate_average_grade(students):
         if len(students) < 1:
-            return -1
+            return -1           # requirement per the prompt
         else:
             total_grades = 0
             for i in students:
                 total_grades += i.grade
 
-        return total_grades / len(students)
+        return total_grades / len(students)     # returning the average grade in the student group
 
     @classmethod
     def get_average_grade(cls):
